@@ -21,12 +21,12 @@ Date: 05 Jan 2016
         <div class="col-md-7">
             <div class="panel panel-info" style="min-height:453px;">
                 <div class="panel-heading">
-                    Update Form
+                    Update {{ctrl.source}}
                 </div>
                 <div class="panel-body">
                     <form ng-submit="ctrl.submitForm()" >
                         <md-content>
-                            <md-input-container class="md-icon-float md-block" ng-repeat="attr in ctrl.listAttr">
+                            <md-input-container class="md-icon-float md-block" ng-repeat="attr in ctrl.listAttr" ng-if="!attr.isHiding">
                                 <label>{{attr.label}}</label>
                                 <input type="{{attr.type}}" ng-checked="attr.value" required name="name" ng-model="attr.value">
                             </md-input-container>

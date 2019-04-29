@@ -43,6 +43,9 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
         templateUrl: 'app/modules/dashboard/views/update.html',
         controller: 'UpdateController',
         controllerAs: 'ctrl',
+        params: {
+            obj: null
+        },
         data: {
             pageTitle: 'Update'
         }

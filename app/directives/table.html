@@ -1,4 +1,7 @@
 <table>
+  <div style="
+    color: #00d000;
+" ng-click="ctrl.addRow()">Add New +</div>
   <!-- <caption>Statement Summary</caption> -->
   <thead>
     <tr>
@@ -9,7 +12,7 @@
   </thead>
   <tbody>
     <tr ng-repeat="item in data">
-      <td data-label="No" ng-click="ctrl.updateRow(item.id)">{{$index+1}}</td>
+      <td data-label="No" ng-click="ctrl.updateRow(item)">{{$index+1}}</td>
       <td data-label="{{key.label}}" ng-repeat="key in columns">{{item[key.value] || "-"}}</td>
       <td>
         <a class="glyphicon glyphicon-trash" style="color: rgba(0, 0, 0, 0.2)" ng-click="ctrl.deleteRow(item.id)"></a>
