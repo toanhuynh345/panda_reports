@@ -1,0 +1,19 @@
+<table>
+  <!-- <caption>Statement Summary</caption> -->
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col" ng-repeat="content in columns">{{content.label}}</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in data">
+      <td data-label="No" ng-click="ctrl.updateRow(item.id)">{{$index+1}}</td>
+      <td data-label="{{key.label}}" ng-repeat="key in columns">{{item[key.value] || "-"}}</td>
+      <td>
+        <a class="glyphicon glyphicon-trash" style="color: rgba(0, 0, 0, 0.2)" ng-click="ctrl.deleteRow(item.id)"></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
