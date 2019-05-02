@@ -109,7 +109,9 @@ table th {
   letter-spacing: .1em;
   text-transform: uppercase;
 }
-
+table th:first-child{
+    width:7%
+}
 @media screen and (max-width: 600px) {
   table {
     border: 0;
