@@ -15,7 +15,6 @@ app.directive('tableData', function( $timeout, $state ) {
 			ctrl.addRow    = addRow;
 
 			function addRow() {
-
 				$state.go('app.update', {obj: {
 					data 		: false,
 					source      : $scope.source,
