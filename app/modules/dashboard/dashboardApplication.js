@@ -50,6 +50,18 @@ dashboard.config(["$stateProvider", function ($stateProvider) {
             pageTitle: 'Update'
         }
     });
+    $stateProvider.state('app.menu', {
+        url: '/menu',
+        templateUrl: 'app/modules/dashboard/views/menu.html',
+        controller: 'MenuController',
+        controllerAs: 'ctrl',
+        params: {
+            obj: null
+        },
+        data: {
+            pageTitle: 'Menu'
+        }
+    });
     //education page state
     $stateProvider.state('app.education', {
         url: '/education',

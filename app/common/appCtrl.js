@@ -125,6 +125,11 @@ function ($rootScope, $scope, $state, $location, Flash, appSettings) {
             title: "User",
             icon: "gears",
             state: "skills"
+        },
+        {
+            title: "Menu",
+            icon: "dashboard",
+            state: "menu"
         }
     ];
 

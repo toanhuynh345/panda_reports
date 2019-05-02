@@ -7,6 +7,7 @@ dashboard.controller("UpdateController", ['$rootScope', '$scope', 'Flash', 'apiS
       ctrl.submitForm = submitForm;
       ctrl.back       = back;
       var Attr = {};
+      var route=null;
       Attr["user"] = [
         {model: "username", label:"User name", value:"", type:"text"},
         {model: "password", label:"Password", value:"", type:"text"},
@@ -24,7 +25,14 @@ dashboard.controller("UpdateController", ['$rootScope', '$scope', 'Flash', 'apiS
         {model: "logo", label:"Logo", value:"", type:"text"},
         {model: "active", label:"Active", value:1, type:"checkbox", isHiding: true},
       ];
-
+      Attr["menu"] = [
+          {model: "name", label:"Name", value:"", type:"text"},
+          {model: "code", label:"Code", value:"", type:"text"},
+          {model: "icon", label:"Icon", value:"", type:"text"},
+          {model: "apiPath", label:"Path", value:"", type:"text"},
+          {model: "order", label:"Order", value:"1", type:"checkbox"},
+          {model: "active", label:"Active", value:1, type:"checkbox", isHiding: true},
+      ];
       ctrl.listAttr = Attr[ctrl.source]; 
 
       function init(){
@@ -34,6 +42,17 @@ dashboard.controller("UpdateController", ['$rootScope', '$scope', 'Flash', 'apiS
              element.value = ctrl.data[element.model];
           });
         }
+         switch (ctrl.source) {
+             case "shop":
+                 route='app.dashboard';
+                 break;
+             case "user":
+                 route='app.skills';
+                 break;
+             case "menu":
+                 route='app.menu';
+                 break;
+          }
       }
 
       init();
@@ -44,14 +63,14 @@ dashboard.controller("UpdateController", ['$rootScope', '$scope', 'Flash', 'apiS
           data[element.model] = element.value 
         });
         apiService.create(ctrl.source+'/'+ctrl.event, data).then(function(success){
-          $state.go( ctrl.source == "shop" ? 'app.dashboard' : 'app.skills' );
+          $state.go(route);
           Flash.create('success', ctrl.event+"ed", 'large-text');
         },function(fail){
           Flash.create('danger', fail.data.data, 'large-text');
         })
       }
       function back() {
-        $state.go( ctrl.source == "shop" ? 'app.dashboard' : 'app.skills' );
+        $state.go(route);
       }
       
      
