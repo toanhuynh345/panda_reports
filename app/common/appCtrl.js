@@ -16,6 +16,11 @@ function ($rootScope, $scope, $state, $location, Flash,appSettings) {
     var vm = this;
 
 
+    $scope.logOut = function(){
+       localStorage.removeItem("userData");
+    }
+
+
     //avalilable themes
     vm.themes = [
         {
