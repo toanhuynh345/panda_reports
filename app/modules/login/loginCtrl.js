@@ -16,7 +16,7 @@ function ($rootScope, $scope, $state, $location, Flash, apiService) {
         vm.setUser = {};
         vm.signIn = true;
 
-        //access login
+        //access login_
         vm.login = function (data) {
             apiService.create('login', {"username": data.Username, "password": data.Password}).then(function(success){
                  $state.go('app.dashboard', {obj:success.data.shop});
@@ -29,14 +29,6 @@ function ($rootScope, $scope, $state, $location, Flash, apiService) {
         };
 
         //get registration details
-        vm.register = function () {
-            if (vm.setUser.confirmPassword == vm.setUser.Password){
-                loginService.registerUser(vm.setUser).then(function (response) {
-                    if (response.message == 'success')
-                console.log('after post>>',response);
-            });
-            }
-        };
 
     }]);
 

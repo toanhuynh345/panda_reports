@@ -1,7 +1,7 @@
+<div style="padding-bottom: 15px;padding-left: 0px" class="col-lg-2">
+  <button class="btn btn-primary" ng-click="ctrl.addRow()"><i class="fa fa-plus"></i> Thêm mới</button>
+</div>
 <table>
-  <div style="
-    color: #00d000;
-" ng-click="ctrl.addRow()">Add New +</div>
   <!-- <caption>Statement Summary</caption> -->
   <thead>
     <tr>
@@ -15,7 +15,7 @@
       <td data-label="No" ng-click="ctrl.updateRow(item)">{{$index+1}}</td>
       <td data-label="{{key.label}}" ng-repeat="key in columns">{{item[key.value] || "-"}}</td>
       <td>
-        <a class="glyphicon glyphicon-trash" style="color: rgba(0, 0, 0, 0.2)" ng-click="ctrl.deleteRow(item.id)"></a>
+        <a class="glyphicon glyphicon-trash" style="color: rgb(255, 0, 0);" ng-click="ctrl.deleteRow(item.id)"></a>
       </td>
     </tr>
   </tbody>
