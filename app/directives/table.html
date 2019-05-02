@@ -12,8 +12,11 @@
   </thead>
   <tbody>
     <tr ng-repeat="item in data">
-      <td data-label="No" ng-click="ctrl.updateRow(item)">{{$index+1}}</td>
-      <td data-label="{{key.label}}" ng-repeat="key in columns">{{item[key.value] || "-"}}</td>
+      <td data-label="No">{{$index+1}}</td>
+      <td data-label="{{key.label}}" ng-repeat="key in columns">
+        <a ng-if="key.link" ng-click="ctrl.updateRow(item)">{{item[key.value] || "-"}}</a>
+        {{key.link?'':(item[key.value] || "-")}}
+      </td>
       <td>
         <a class="glyphicon glyphicon-trash" style="color: rgb(255, 0, 0);" ng-click="ctrl.deleteRow(item.id)"></a>
       </td>

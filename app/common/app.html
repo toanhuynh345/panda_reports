@@ -16,39 +16,6 @@
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-                    <li class="dropdown notifications-menu hidden-xs hidden-sm">
-                        <a class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-align-justify"></i> Layouts
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <ul class="menu">
-                                    <li data-ng-repeat="screen in vm.layouts" data-ng-click="vm.setLayout(screen.layout);">
-                                        <a>
-                                            <i class="fa fa-indent"></i> {{screen.name}}
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown notifications-menu">
-                        <a class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-gears"></i> Themes
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <ul class="menu">
-                                    <li data-ng-repeat="theme in vm.themes" data-ng-click="vm.setTheme(theme.color);">
-                                        <a>
-                                            <i class="fa fa-flag{{theme.icon}} text-{{theme.theme}}"></i>{{theme.title}}
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a class="dropdown-toggle" data-toggle="dropdown">
@@ -68,9 +35,6 @@
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
-                                <div class="pull-left">
-                                    <a ui-sref="app.about" class="btn btn-success btn-flat">About Me</a>
-                                </div>
                                 <div class="pull-right">
                                     <a ui-sref="login" class="btn btn-danger btn-flat" ng-click="logOut()">Log Out</a>
                                 </div>
@@ -91,7 +55,7 @@
                     <img src="../../images/ranjith.png" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Ranjithprabhu. K</p>
+                    <p>Phước nguyễn</p>
                     <span class="text-aqua text-sm">Software Engineer</span>
                 </div>
             </div>

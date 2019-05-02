@@ -101,7 +101,7 @@ table tr {
 table th,
 table td {
   padding: 1em;
-  text-align: center;
+  text-align: left;
 }
 
 table th {
