@@ -8,7 +8,7 @@
  ===========================================================*/
 
 app.controller("appCtrl", ['$rootScope', '$scope', '$state', '$location', 'Flash','appSettings',
-function ($rootScope, $scope, $state, $location, Flash,appSettings) {
+function ($rootScope, $scope, $state, $location, Flash, appSettings) {
 
     $rootScope.theme = appSettings.theme;
     $rootScope.layout = appSettings.layout;
